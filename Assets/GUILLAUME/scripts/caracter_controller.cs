@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class caracter_controller : MonoBehaviour {
-    float posX; float posY; public float walkspeed; float runspeed;
+    float posX; float posY; public float walkspeed; public float runspeed;
     // Use this for initialization
     void Start() {
         runspeed = 1;
@@ -13,10 +13,12 @@ public class caracter_controller : MonoBehaviour {
     void Update() {
 
         if (Input.GetButton("run"))
-            {
+        {
             runspeed = 1.4f;
-
         }
+
+        else { runspeed = 1; }
+        
 
         posX = Input.GetAxis("Horizontal");
         posY = Input.GetAxis("Vertical");
