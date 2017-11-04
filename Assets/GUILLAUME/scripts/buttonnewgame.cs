@@ -6,7 +6,7 @@ public class buttonnewgame : MonoBehaviour {
 
 	public void Newgame()
     {
-        debog.log("nique ta grosse race");
+        Debug.Log("new game");
 
     }
 }
