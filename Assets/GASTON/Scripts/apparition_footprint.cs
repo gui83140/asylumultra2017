@@ -6,9 +6,12 @@ public class apparition_footprint : MonoBehaviour {
 
     public GameObject empreinte;
     public GameObject FootMoove;
+    public GameObject FootMoove2;
     public GameObject Socket;
 
+    private float InstantiationTimer = .5f;
     bool OnDown = false;
+    bool AutrePied = true;
 
     void Update()
     {
@@ -20,7 +23,8 @@ public class apparition_footprint : MonoBehaviour {
             empreinte.SetActive(false);        
             OnDown = false;
 
-            Instantiate(FootMoove, Socket.transform.position, Socket.transform.rotation);
+            CreatePrefab();
+
         }
         if (Input.GetKey(KeyCode.Z))
         {
@@ -40,4 +44,22 @@ public class apparition_footprint : MonoBehaviour {
         }
     }
 
+    void CreatePrefab()
+    {
+        InstantiationTimer -= Time.deltaTime;
+        if (InstantiationTimer <= 0 && AutrePied)
+        {
+            var Prints = Instantiate(FootMoove, Socket.transform.position, Socket.transform.rotation);
+            InstantiationTimer = .5f;
+            Destroy(Prints, 2f);
+            AutrePied = false;
+        }
+        if (InstantiationTimer <= 0 && !AutrePied)
+        {
+            var Prints = Instantiate(FootMoove2, Socket.transform.position, Socket.transform.rotation);
+            InstantiationTimer = .5f;
+            Destroy(Prints, 2f);
+            AutrePied = true;
+        }
+    }
 }
