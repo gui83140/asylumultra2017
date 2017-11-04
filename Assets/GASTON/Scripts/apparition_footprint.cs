@@ -50,14 +50,14 @@ public class apparition_footprint : MonoBehaviour {
         if (InstantiationTimer <= 0 && AutrePied)
         {
             var Prints = Instantiate(FootMoove, Socket.transform.position, Socket.transform.rotation);
-            InstantiationTimer = .5f;
+            InstantiationTimer = .8f;
             Destroy(Prints, 2f);
             AutrePied = false;
         }
         if (InstantiationTimer <= 0 && !AutrePied)
         {
             var Prints = Instantiate(FootMoove2, Socket.transform.position, Socket.transform.rotation);
-            InstantiationTimer = .5f;
+            InstantiationTimer = .8f;
             Destroy(Prints, 2f);
             AutrePied = true;
         }

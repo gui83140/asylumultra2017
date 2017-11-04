@@ -27,7 +27,6 @@ public class Enemy_Controller : MonoBehaviour {
 
             if (distance <= agent.stoppingDistance)
             {
-
                 FaceTarget();
             }
         }
