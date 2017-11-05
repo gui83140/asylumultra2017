@@ -282,6 +282,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 20485835}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &25713196
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4673552899330732, guid: de10eb6869ac3b042a7baedebaff3100, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673552899330732, guid: de10eb6869ac3b042a7baedebaff3100, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673552899330732, guid: de10eb6869ac3b042a7baedebaff3100, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673552899330732, guid: de10eb6869ac3b042a7baedebaff3100, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673552899330732, guid: de10eb6869ac3b042a7baedebaff3100, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673552899330732, guid: de10eb6869ac3b042a7baedebaff3100, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673552899330732, guid: de10eb6869ac3b042a7baedebaff3100, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673552899330732, guid: de10eb6869ac3b042a7baedebaff3100, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: de10eb6869ac3b042a7baedebaff3100, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &33162849
 GameObject:
   m_ObjectHideFlags: 0
@@ -3908,7 +3950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3557ded909bea0d47866a0ba5876f160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1540193538}
+  player: {fileID: 0}
 --- !u!20 &1142067258
 Camera:
   m_ObjectHideFlags: 0
