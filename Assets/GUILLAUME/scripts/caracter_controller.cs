@@ -34,11 +34,16 @@ public class caracter_controller : MonoBehaviour {
         if (dansleau == true && position!=transform.position)
         {
             
+
+
             countime = countime+1;
-            if (countime==40 && position != transform.position)
+
+            
+            if (countime==25 && position != transform.position)
             {
+                
                 GetComponent<AudioSource>().Play();
-                position = transform.position;
+                
                 dansleau = false;
                 countime = 0;
                 position = transform.position;
@@ -61,9 +66,18 @@ public class caracter_controller : MonoBehaviour {
             if (theCollision.gameObject.tag == "EAU")
             {
                 GetComponent<AudioSource>().Play();
+
+                
             }
         }
+        
+    private void OnTriggerExit(Collider thecollision)
+    {
+        dansleau = false;
+        countime = 0;
+        
     }
+}
 
 
   
