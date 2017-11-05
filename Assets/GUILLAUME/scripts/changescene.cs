@@ -7,7 +7,7 @@ public class changescene : MonoBehaviour {
 
 public void OnStartGame() { 
         
-        SceneManager.LoadScene("test1");
+        SceneManager.LoadScene("tests_NIVEAUX 1");
 
     }
 
@@ -17,6 +17,13 @@ public void OnStartGame() {
         SceneManager.LoadScene("creditscene");
 
     }
+
+    public void retourmenu()
+    {
+        SceneManager.LoadScene("test_menu");
+
+    }
+
 
     public void quit()
     {
