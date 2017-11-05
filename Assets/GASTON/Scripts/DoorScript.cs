@@ -54,6 +54,7 @@ public class DoorScript : MonoBehaviour
                 {
                     open = true;
                     SoundFX();
+                    Ca_Fe.SetActive(false);
                     Ca_Ou.SetActive(true);
                     _animator.SetBool("open", true);
                     soundplayed = true;
