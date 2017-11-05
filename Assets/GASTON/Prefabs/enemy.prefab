@@ -284,6 +284,8 @@ GameObject:
   - component: {fileID: 95613605603615824}
   - component: {fileID: 195964611631993518}
   - component: {fileID: 114717095349518062}
+  - component: {fileID: 54018340814611672}
+  - component: {fileID: 65100582281597814}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -927,8 +929,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1576083640634984}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 12.48}
-  m_LocalScale: {x: 10.760734, y: 10.760732, z: 10.760732}
+  m_LocalPosition: {x: -1.8789369, y: -0.01, z: -30.54}
+  m_LocalScale: {x: 15.411703, y: 15.411699, z: 15.411699}
   m_Children:
   - {fileID: 4494185725700026}
   - {fileID: 4033118164395282}
@@ -1016,6 +1018,33 @@ Transform:
   m_Father: {fileID: 4033118164395282}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54018340814611672
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1576083640634984}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!65 &65100582281597814
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1576083640634984}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.19, z: -0.16}
+  m_Center: {x: 0, y: 0.11, z: 0}
 --- !u!95 &95613605603615824
 Animator:
   serializedVersion: 3
