@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Enemy_Controller : MonoBehaviour {
 
     public static bool allum;
     public static float LookRadius = 5f;
+    public float RestartDelay = 2f;
+    public ParticleSystem blood;
 
     public Transform target;
     NavMeshAgent agent;
@@ -52,5 +55,21 @@ public class Enemy_Controller : MonoBehaviour {
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, LookRadius);
+    }
+
+    void OnTriggerEnter (Collider bite)
+    {
+        if(bite.gameObject.tag == "Player")
+        {
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
+            blood.Play();
+            Invoke("Restart", RestartDelay);
+        }
+    }
+
+    void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
