@@ -6,6 +6,8 @@ TagManager:
   tags:
   - EAU
   - Clef
+  - ENDLVL
+  - enemy
   layers:
   - Default
   - TransparentFX

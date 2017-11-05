@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/GASTON/Scenes/Tests_GASTON.unity
+    guid: f71e3f610940ac546aee2c1f76fd18fe
+  - enabled: 1
     path: Assets/GUILLAUME/scenes/test1.unity
     guid: 8380e24edcfcf8c4c9614e87bef54655
   - enabled: 1
