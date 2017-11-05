@@ -11,6 +11,7 @@ public class Enemy_Controllernew : MonoBehaviour
     public static float LookRadius = 5f;
     public float RestartDelay = 2f;
     public ParticleSystem blood;
+    public Light chatte;
 
     public Transform target;
     NavMeshAgent agent;

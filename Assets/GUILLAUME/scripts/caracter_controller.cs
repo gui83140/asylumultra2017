@@ -19,42 +19,7 @@ public class caracter_controller : MonoBehaviour {
     void Update() {
 
 
-        
-
-        if (Input.GetButton("run"))
-        {
-            runspeed = 1.5f;
-        }
-
-        else { runspeed = 1; }
-        
-
-        posX = Input.GetAxis("Horizontal");
-        posY = Input.GetAxis("Vertical");
-
-        transform.position = transform.position + new Vector3(posX, 0, posY) * walkspeed * runspeed;
-
-
-        if (dansleau == true && position!=transform.position)
-        {
-            
-
-
-            countime = countime+1;
-
-            
-            if (countime==25 && position != transform.position)
-            {
-                
-                GetComponent<AudioSource>().Play();
-                
-                dansleau = false;
-                countime = 0;
-                position = transform.position;
-            }
-        }
-
-        if(CanMove)
+        if (CanMove)
         {
             if (Input.GetButton("run"))
             {
@@ -74,17 +39,19 @@ public class caracter_controller : MonoBehaviour {
             {
 
                 countime = countime + 1;
-                if (countime == 40 && position != transform.position)
+
+
+                if (countime == 25 && position != transform.position)
                 {
+
                     GetComponent<AudioSource>().Play();
-                    position = transform.position;
+
                     dansleau = false;
                     countime = 0;
                     position = transform.position;
                 }
             }
-        }      
-
+        }     
     }
     //void OnCollisionStay(Collision collision)
     void OnTriggerStay(Collider theCollision)

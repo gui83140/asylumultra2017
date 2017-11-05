@@ -10,12 +10,34 @@ public class Enemy_Controller : MonoBehaviour {
     public static float LookRadius = 5f;
     public float RestartDelay = 2f;
     public ParticleSystem blood;
-
+    private bool soundplayed;
+    public Light cul;
+    public AudioClip[] Clips;
+    private AudioSource[] audioSources;
     public Transform target;
+    private Vector3 posi;
+
     NavMeshAgent agent;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
+
+        soundplayed = false;
+        audioSources = new AudioSource[Clips.Length];
+        int i = 0;
+        while (i < Clips.Length)
+        {
+            GameObject child = new GameObject("Player");
+
+            child.transform.parent = gameObject.transform;
+
+            audioSources[i] = child.AddComponent<AudioSource>() as AudioSource;
+
+            audioSources[i].clip = Clips[i];
+
+            i++;
+        }
         agent = GetComponent<NavMeshAgent>();
 	}
 	
@@ -23,8 +45,8 @@ public class Enemy_Controller : MonoBehaviour {
 	void Update () {
 
         float distance = Vector3.Distance(target.position, transform.position);
-		
-        if(allum)
+        
+        if (allum)
         {
             Enemy_Controller.LookRadius = 9f;
         }
@@ -34,13 +56,24 @@ public class Enemy_Controller : MonoBehaviour {
         }
         if (distance <= LookRadius)
         {
-
+            cul.enabled = true;
+            if (!soundplayed)
+            {
+                audioSources[1].Play();
+                soundplayed = true;
+            }
+            
             agent.SetDestination(target.position);
 
             if (distance <= agent.stoppingDistance)
             {
                 FaceTarget();
             }
+        }
+        if (distance >= LookRadius)
+        {
+            cul.enabled = false;
+            soundplayed = false;
         }
 	}
 
@@ -61,8 +94,7 @@ public class Enemy_Controller : MonoBehaviour {
     {
         if(bite.gameObject.tag == "Player")
         {
-            AudioSource audio = GetComponent<AudioSource>();
-            audio.Play();
+            audioSources[0].Play();
             blood.Play();
             Invoke("Restart", RestartDelay);
         }
