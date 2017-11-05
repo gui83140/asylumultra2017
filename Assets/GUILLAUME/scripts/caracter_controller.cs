@@ -18,7 +18,7 @@ public class caracter_controller : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-<<<<<<< HEAD
+
         
 
         if (Input.GetButton("run"))
@@ -53,7 +53,7 @@ public class caracter_controller : MonoBehaviour {
                 position = transform.position;
             }
         }
-=======
+
         if(CanMove)
         {
             if (Input.GetButton("run"))
@@ -84,7 +84,7 @@ public class caracter_controller : MonoBehaviour {
                 }
             }
         }      
->>>>>>> 9cb231e420136d6b79cb8a3e09637b00939a5b13
+
     }
     //void OnCollisionStay(Collision collision)
     void OnTriggerStay(Collider theCollision)
