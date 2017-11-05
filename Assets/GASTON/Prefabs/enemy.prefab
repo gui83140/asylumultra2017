@@ -283,10 +283,10 @@ GameObject:
   - component: {fileID: 4804974192553932}
   - component: {fileID: 95613605603615824}
   - component: {fileID: 195964611631993518}
-  - component: {fileID: 114717095349518062}
   - component: {fileID: 54018340814611672}
   - component: {fileID: 65100582281597814}
   - component: {fileID: 82493918570570034}
+  - component: {fileID: 114406866075549834}
   m_Layer: 0
   m_Name: enemy
   m_TagString: enemy
@@ -1179,7 +1179,7 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114717095349518062
+--- !u!114 &114406866075549834
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1190,8 +1190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74c6b17aa6a34848b33e9499a983b12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RestartDelay: 1
-  blood: {fileID: 0}
   target: {fileID: 0}
 --- !u!137 &137297333374791686
 SkinnedMeshRenderer:
