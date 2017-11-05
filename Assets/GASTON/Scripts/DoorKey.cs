@@ -19,9 +19,12 @@ public class DoorKey : MonoBehaviour
     void Update()
     {
         if (inTrigger)
-        {           
-                DoorScript.doorKey = true;
-                Destroy(this.gameObject);
+        {
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
+            DoorScript.doorKey = true;
+            transform.position = Vector3.one * 99999999f;
+            Destroy(this.gameObject, 2f);
         }
     }
 
