@@ -1,23 +1,23 @@
 fileFormatVersion: 2
-guid: 356323afbc2ef4945a31fd5474ae5969
-timeCreated: 1487782694
-licenseType: Store
+guid: 5abfc2d3b5ea5d64ca95d10d1a34b677
+timeCreated: 1509893346
+licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Plane002
+    100002: pPlane3
     400000: //RootNode
-    400002: Plane002
-    2300000: Plane002
-    3300000: Plane002
-    4300000: Plane002
+    400002: pPlane3
+    2300000: pPlane3
+    3300000: pPlane3
+    4300000: pPlane3
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Plane002Mat
-    second: {fileID: 2100000, guid: 88d9f7c91b1b013499e8baad829309bc, type: 2}
+      name: pPlane3Mat
+    second: {fileID: 2100000, guid: 28f333dac7f6b0946a77df7f5d09aff7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -50,12 +50,12 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -69,7 +69,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-    normalCalculationMode: 0
+    normalCalculationMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -87,7 +87,7 @@ ModelImporter:
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 0
+    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
   humanoidOversampling: 1

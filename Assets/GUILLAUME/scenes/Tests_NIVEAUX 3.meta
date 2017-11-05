@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 48cf4fea57a97524980a56508a7d9ff8
 folderAsset: yes
+<<<<<<< HEAD:Assets/GUILLAUME/scenes/Tests_NIVEAUX 3.meta
 timeCreated: 1509886518
+=======
+timeCreated: 1509864565
+>>>>>>> 14a0c86fa48f970c7342c998ef2e4547a957bc28:Assets/Models.meta
 licenseType: Free
 DefaultImporter:
   externalObjects: {}

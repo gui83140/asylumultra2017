@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/GUILLAUME/scenes/Tests_NIVEAUX 3/NavMesh.asset.meta
 guid: 89b8ba831de08614db474ef14b6ac7cd
 timeCreated: 1509886990
+=======
+guid: 28f333dac7f6b0946a77df7f5d09aff7
+timeCreated: 1509864567
+>>>>>>> 14a0c86fa48f970c7342c998ef2e4547a957bc28:Assets/Models/Key/Models/Materials/pPlane3Mat.mat.meta
 licenseType: Free
 NativeFormatImporter:
   externalObjects: {}

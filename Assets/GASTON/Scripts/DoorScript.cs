@@ -6,8 +6,33 @@ public class DoorScript : MonoBehaviour
 
     public static bool doorKey;
     public bool open;
-    public bool close;
     public bool inTrigger;
+    private bool soundplayed;
+    public GameObject Ca_Fe;
+    public GameObject Ca_Ou;
+    public AudioClip[] Clips;
+    private AudioSource[] audioSources;
+    private Animator _animator;
+
+    void Start()
+    {
+        soundplayed = false;
+        audioSources = new AudioSource[Clips.Length];
+        int i = 0;
+        while (i < Clips.Length)
+        {
+            GameObject child = new GameObject("Player");
+
+            child.transform.parent = gameObject.transform;
+
+            audioSources[i] = child.AddComponent<AudioSource>() as AudioSource;
+
+            audioSources[i].clip = Clips[i];
+
+            i++;
+        }
+        _animator = GetComponent<Animator>();
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -24,42 +49,23 @@ public class DoorScript : MonoBehaviour
         if (inTrigger)
         {
             if (doorKey)
-            {                  
-                open = true;
+            {
+                if (!soundplayed)
+                {
+                    open = true;
+                    SoundFX();
+                    Ca_Fe.SetActive(false);
+                    Ca_Ou.SetActive(true);
+                    _animator.SetBool("open", true);
+                    soundplayed = true;
+                }               
             }
-        }
-
-        if (open)
-        {
-            var newRot = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0.0f, -90.0f, 0.0f), Time.deltaTime * 200);
-            transform.rotation = newRot;
-        }
-        else
-        {
-            var newRot = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0.0f, 0.0f, 0.0f), Time.deltaTime * 200);
-            transform.rotation = newRot;
         }
     }
 
-    void OnGUI()
+    void SoundFX()
     {
-        if (inTrigger)
-        {
-            if (open)
-            {
-                GUI.Box(new Rect(0, 0, 200, 25), "Press E to close");
-            }
-            else
-            {
-                if (doorKey)
-                {
-                    GUI.Box(new Rect(0, 0, 200, 25), "Press E to open");
-                }
-                else
-                {
-                    GUI.Box(new Rect(0, 0, 200, 25), "Need a key!");
-                }
-            }
-        }
+        audioSources[0].Play();
+        audioSources[1].Play();
     }
 }
