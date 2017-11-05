@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightRotation : MonoBehaviour {
 
-    public Light Lampe;
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -30,12 +30,9 @@ public class LightRotation : MonoBehaviour {
 
     void SwitchLampState()
     {
-
         if (Input.GetButtonDown("Fire2"))
         {
-
-            Lampe.enabled = !Lampe.enabled;
-
+            LampeEtat.ok = true;
         }
     }
 }

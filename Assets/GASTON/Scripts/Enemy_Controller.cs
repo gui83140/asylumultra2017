@@ -5,7 +5,8 @@ using UnityEngine.AI;
 
 public class Enemy_Controller : MonoBehaviour {
 
-    public float LookRadius = 10f;
+    public static bool allum;
+    public static float LookRadius = 5f;
 
     public Transform target;
     NavMeshAgent agent;
@@ -20,6 +21,14 @@ public class Enemy_Controller : MonoBehaviour {
 
         float distance = Vector3.Distance(target.position, transform.position);
 		
+        if(allum)
+        {
+            Enemy_Controller.LookRadius = 9f;
+        }
+        if(!allum)
+        {
+            Enemy_Controller.LookRadius = 5f;
+        }
         if (distance <= LookRadius)
         {
 
