@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class caracter_controller1 : MonoBehaviour {
+
     float posX; float posY; public float walkspeed; public float runspeed;
+
     // Use this for initialization
     void Start() {
         runspeed = 1;
@@ -24,7 +26,6 @@ public class caracter_controller1 : MonoBehaviour {
         posY = Input.GetAxis("Vertical");
 
         transform.position = transform.position + new Vector3(posX, 0, posY) * walkspeed * runspeed;
-
-
-    }
+        
+    }    
 }
