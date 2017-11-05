@@ -1,15 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DoorScript : MonoBehaviour
+public class DoorScriptOUV : MonoBehaviour
 {
 
     public static bool doorKey;
     public bool open;
     public bool inTrigger;
     private bool soundplayed;
-    public GameObject Ca_Fe;
-    public GameObject Ca_Ou;
     public AudioClip[] Clips;
     private AudioSource[] audioSources;
     private Animator _animator;
@@ -36,30 +34,18 @@ public class DoorScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        inTrigger = true;
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        inTrigger = false;
+        if (!soundplayed)
+        {
+            open = true;
+            SoundFX();
+            _animator.SetBool("open", true);
+            soundplayed = true;
+        }
     }
 
     void Update()
     {
-        if (inTrigger)
-        {
-            if (doorKey)
-            {
-                if (!soundplayed)
-                {
-                    open = true;
-                    SoundFX();
-                    Ca_Ou.SetActive(true);
-                    _animator.SetBool("open", true);
-                    soundplayed = true;
-                }               
-            }
-        }
+
     }
 
     void SoundFX()
